@@ -5,66 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate Organ & Blood Today</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #fce4ec, #e3f2fd);
-      color: #333;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f8bbd0, #e1f5fe);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(to right, #3f51b5, #e91e63);
+      background: linear-gradient(to right, #8e24aa, #d81b60);
       color: white;
-      padding: 25px;
+      width: 100%;
+      padding: 25px 0;
       text-align: center;
       font-size: 2.5em;
       font-weight: bold;
       letter-spacing: 1px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      position: fixed;
+      top: 0;
+      z-index: 1;
     }
 
     .container {
+      margin-top: 120px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 30px;
-      padding: 40px;
+      width: 90%;
+      max-width: 1200px;
     }
 
     .login-box {
       background: white;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-      padding: 30px;
-      width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 30px 25px;
+      width: 280px;
+      text-align: center;
+      transition: 0.4s ease;
       position: relative;
-      overflow: hidden;
-    }
-
-    .login-box:hover {
-      transform: scale(1.03);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      border-top: 4px solid transparent;
     }
 
     .login-box h2 {
-      text-align: center;
       margin-bottom: 20px;
       font-weight: bold;
     }
 
-    /* Section Colors */
-    .donor    { border-top: 5px solid #e91e63; }
-    .requester{ border-top: 5px solid #ff9800; }
-    .admin    { border-top: 5px solid #9c27b0; }
-    .volunteer{ border-top: 5px solid #009688; }
-
     .login-box input[type="text"],
-    .login-box input[type="password"],
-    .login-box input[type="email"] {
+    .login-box input[type="password"] {
       width: 100%;
       padding: 12px;
-      margin: 10px 0;
+      margin: 8px 0;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1em;
@@ -73,7 +77,7 @@
     .login-box button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(to right, #03a9f4, #673ab7);
+      background: linear-gradient(to right, #2196f3, #673ab7);
       border: none;
       color: white;
       font-size: 1em;
@@ -84,26 +88,36 @@
     }
 
     .login-box button:hover {
-      background: linear-gradient(to right, #0288d1, #512da8);
+      background: linear-gradient(to right, #1e88e5, #512da8);
     }
 
     .signup {
-      text-align: center;
       margin-top: 15px;
       font-size: 0.9em;
     }
 
     .signup a {
-      color: #d81b60;
-      text-decoration: none;
+      color: #e91e63;
       font-weight: bold;
+      text-decoration: none;
     }
 
     .signup a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 960px) {
+    /* Section Border Colors */
+    .donor    { border-top-color: #e91e63; }
+    .requester{ border-top-color: #ff9800; }
+    .admin    { border-top-color: #9c27b0; }
+
+    /* Hover Near Effect */
+    .login-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (max-width: 950px) {
       .container {
         flex-direction: column;
         align-items: center;
@@ -123,8 +137,8 @@
     <div class="login-box donor">
       <h2>Donor Login</h2>
       <form>
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
         <button type="submit">Login</button>
         <div class="signup">
           Don't have an account? <a href="#">Signup</a>
@@ -136,8 +150,8 @@
     <div class="login-box requester">
       <h2>Requester Login</h2>
       <form>
-        <input type="text" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required />
         <button type="submit">Login</button>
         <div class="signup">
           Don't have an account? <a href="#">Signup</a>
@@ -149,8 +163,8 @@
     <div class="login-box admin">
       <h2>Admin Login</h2>
       <form>
-        <input type="text" placeholder="Admin Username" required>
-        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Admin Username" required />
+        <input type="password" placeholder="Password" required />
         <button type="submit">Login</button>
         <div class="signup">
           Admin only? <a href="#">Request Access</a>
@@ -158,8 +172,7 @@
       </form>
     </div>
 
-   
-  
+  </div>
 
 </body>
 </html>
